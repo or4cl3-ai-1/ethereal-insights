@@ -779,16 +779,7 @@ Respond in 2-4 sentences unless detail is requested. Only reference data shown a
     return `Full session status: scanner ${scanActive ? "active" : "paused"}, ${anomalies.length} anomalies (${criticals} critical), Spirit Box ${spiritSweeping ? `sweeping at ${spiritFreq.toFixed(1)} MHz` : "idle"} with ${spiritContacts.length} contacts logged.`;
   }; // end _unused
 
-  const [groqKey, setGroqKey] = React.useState(() => localStorage.getItem("groq_api_key") || "");
-  const [showKeyInput, setShowKeyInput] = React.useState(false);
-  const [keyDraft, setKeyDraft] = React.useState("");
 
-  const saveKey = () => {
-    localStorage.setItem("groq_api_key", keyDraft.trim());
-    setGroqKey(keyDraft.trim());
-    setShowKeyInput(false);
-    setKeyDraft("");
-  };
 
   const send = async () => {
     if (!input.trim() || thinking) return;
@@ -815,20 +806,17 @@ Respond in 2-4 sentences unless detail is requested. Only reference data shown a
       };
 
       // fetch() is blocked by CSP in the app sandbox — route through runCommand bridge
-      const storedKey = localStorage.getItem("groq_api_key") || "";
-      if (!storedKey) {
-        setMessages(prev => [...prev, { role: "echo", content: "⚠ No Groq API key configured. Enter your key using the settings button (⚙) above.", timestamp: Date.now() }]);
-        setThinking(false);
-        return;
-      }
+      // API key is stored securely in agent filesystem, never exposed to client
       const payloadB64 = btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
       const pythonScript = `python3 -c "
 import base64, urllib.request, json, sys
+with open('/agent/home/.groq_key') as f:
+  api_key = f.read().strip()
 payload = json.loads(base64.b64decode('${payloadB64}').decode('utf-8'))
 req = urllib.request.Request(
   'https://api.groq.com/openai/v1/chat/completions',
   data=json.dumps(payload).encode('utf-8'),
-  headers={'Authorization': 'Bearer ${storedKey}', 'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0 (compatible; groq-python/0.9.0)'},
+  headers={'Authorization': 'Bearer ' + api_key, 'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0 (compatible; groq-python/0.9.0)'},
   method='POST'
 )
 with urllib.request.urlopen(req, timeout=30) as r:
@@ -857,27 +845,8 @@ with urllib.request.urlopen(req, timeout=30) as r:
           <div className="echo-orb" />
           <div><div className="screen-title">ECHO AI</div><div className="echo-subtitle">Llama 3.3 70B · Quantum-Aware Analysis</div></div>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <div className="echo-status">{groqKey ? "● ONLINE" : "● NO KEY"}</div>
-          <button onClick={() => { setShowKeyInput(v => !v); setKeyDraft(groqKey); }}
-            style={{ background: "none", border: "1px solid rgba(100,220,255,0.3)", borderRadius: 6, color: "#64dcff", padding: "4px 8px", fontSize: 14, cursor: "pointer" }}>⚙</button>
-        </div>
+        <div className="echo-status">● ONLINE</div>
       </div>
-      {showKeyInput && (
-        <div style={{ flexShrink: 0, padding: "8px 12px", background: "rgba(10,20,40,0.95)", borderBottom: "1px solid rgba(100,220,255,0.2)", display: "flex", gap: 8, alignItems: "center" }}>
-          <input
-            type="password"
-            placeholder="Paste Groq API key (gsk_...)"
-            value={keyDraft}
-            onChange={e => setKeyDraft(e.target.value)}
-            style={{ flex: 1, background: "rgba(255,255,255,0.07)", border: "1px solid rgba(100,220,255,0.3)", borderRadius: 6, color: "#e0f7ff", padding: "8px 10px", fontSize: 13, outline: "none" }}
-          />
-          <button onClick={saveKey}
-            style={{ background: "rgba(100,220,255,0.15)", border: "1px solid rgba(100,220,255,0.4)", borderRadius: 6, color: "#64dcff", padding: "8px 14px", fontSize: 13, cursor: "pointer", whiteSpace: "nowrap" }}>Save</button>
-          {groqKey && <button onClick={() => { localStorage.removeItem("groq_api_key"); setGroqKey(""); setShowKeyInput(false); }}
-            style={{ background: "rgba(255,60,60,0.1)", border: "1px solid rgba(255,60,60,0.3)", borderRadius: 6, color: "#ff6060", padding: "8px 14px", fontSize: 13, cursor: "pointer" }}>Clear</button>}
-        </div>
-      )}
       <div className="chat-container" style={{ flex: 1, minHeight: 0 }}>
         {messages.map((m, i) => (
           <div key={i} className={`chat-bubble ${m.role === "user" ? "bubble-user" : "bubble-echo"}`}>
