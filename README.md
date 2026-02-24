@@ -1,120 +1,129 @@
-# 🌌 Ethereal Insights
+# 🌌 Ethereal Insights v2.0
 
-**Quantum-Enhanced Paranormal Investigation Platform**
+> *Walk the razor between rigorous science and the unknown.*
 
-> *"Walk the razor between legit scientific tool and captivating experience."*
+**The world's first quantum-benchmarked paranormal investigation platform.** Ethereal Insights doesn't just measure anomalies — it benchmarks them against certified Quantum Random Number Generator (QRNG) streams using Bell-like statistical tests, giving investigators a defensible, physics-grounded framework for evaluating unexplained phenomena.
 
-Ethereal Insights is the world's first paranormal investigation platform that benchmarks sensor anomalies against **certified Quantum Random Number Generator (QRNG) streams**. It doesn't just detect anomalies — it quantifies *how non-classical* they are.
-
-[![Or4cl3 AI Solutions](https://img.shields.io/badge/Or4cl3%20AI-Solutions-blueviolet?style=flat-square)](https://github.com/or4cl3-ai-1)
-[![License](https://img.shields.io/badge/license-OOML%20v1.0-blue?style=flat-square)](./LICENSE)
-[![React](https://img.shields.io/badge/React-18-61dafb?style=flat-square&logo=react)](https://react.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?style=flat-square&logo=typescript)](https://typescriptlang.org)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Ethereal%20Insights-blueviolet?style=for-the-badge)](https://or4cl3-ai-1.github.io/ethereal-insights)
+[![License](https://img.shields.io/badge/License-OOML%20v1.0-teal?style=for-the-badge)](./LICENSE)
+[![Built with React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)](https://react.dev)
+[![Powered by Groq](https://img.shields.io/badge/AI-Llama%203.3%2070B%20%C2%B7%20Groq-orange?style=for-the-badge)](https://groq.com)
 
 ---
 
-## ✨ Features
+## ✨ What Makes This Different
 
-### 7 Investigation Screens
-| Screen | Description |
-|--------|-------------|
-| 🏠 **HOME** | Quantum HUD with live sensor readings, anomaly detection, S-value calculations, QRNG deviation tracking |
-| 🔍 **SCAN** | 200-particle quantum visualizer with Bell inequality meter and environmental sensor grid |
-| 👻 **SPIRIT** | Real-time FM frequency sweep (87.5–108.0 MHz) with full Web Audio API engine |
-| 💬 **ECHO** | Llama 3.3 70B AI with full visibility into all live session data |
-| 🎙️ **EVP** | Entropy analysis comparing sensor data vs certified QRNG streams |
-| 📊 **HUD** | Comprehensive quantum metrics dashboard |
-| 📋 **LOG** | Complete session event history |
+Most paranormal apps use basic EMF meters and audio recorders with no scientific framework. Ethereal Insights applies **real quantum physics** to anomaly detection:
 
-### 🔬 Scientific Differentiators
-- **Bell-like statistical tests** on sensor data — measures non-classical correlations using the CHSH inequality (classical bound: S ≤ 2.0, Tsirelson bound: S ≤ 2.828)
-- **QRNG benchmarking** — anomalies are scored against certified random streams from [ANU QRNG](https://qrng.anu.edu.au/) and [IDQ Quantis](https://www.idquantique.com/)
-- **Quantum entropy comparison** — sensor entropy vs true quantum baseline
-- **Every claim is physics-defensible** — no pseudoscience, just rigorous anomaly detection
+- **Bell Inequality Testing** — Runs CHSH-style statistical tests on sensor data to flag non-classical correlations
+- **QRNG Benchmarking** — Compares environmental entropy against certified quantum random streams (ANU, IDQ)
+- **Quantum Entropy Analysis** — EVP screen isolates structured deviations from true randomness
+- **S-Value Tracking** — Live Bell parameter monitoring with classical (S≤2) vs quantum (S>2) threshold display
 
-### 🎵 Spirit Box Audio Engine
-- White noise + bandpass filter tracking FM sweep (350–3750 Hz)
-- LFO-chopped station blips for authentic scanning texture
-- Sawtooth "voice burst" on contact (160–340 Hz, mimics vocal harmonics)
-- Variable sweep rates: 1×, 2×, 3×
-
-### 🤖 Echo AI (Llama 3.3 70B)
-- Powered by [Groq](https://console.groq.com) — fast enough to feel like a live instrument
-- Sees all live session data: sensor readings, Bell S-values, spirit contacts, anomaly flags
-- Maintains full conversation history for context-aware analysis
-- Interprets cross-screen correlations intelligently
-
-### 📱 Mobile-First Design
-- 70px bottom navigation with Lucide icons
-- 48px minimum touch targets throughout
-- Keyboard-safe layouts (Echo chat)
-- Smooth fade-up screen transitions
-- Deep void black with animated nebula gradients
-- CRT scanlines, neon glow system, glass morphism
+The claim is defensible: *"We flag what the physics says is anomalous."*
 
 ---
 
-## 🚀 Quick Start
+## 📱 Seven Investigation Screens
+
+| Screen | Function |
+|--------|----------|
+| **HOME** | Quantum HUD — live sensor readings, anomaly detection, S-value, QRNG deviation |
+| **SCAN** | 200-particle quantum visualizer, Bell inequality meter, environmental sensor grid |
+| **SPIRIT** | FM frequency sweep (87.5–108.0 MHz) with full Web Audio API engine — white noise + bandpass filter tracking frequency, sawtooth voice bursts on contact |
+| **ECHO** | Llama 3.3 70B AI with full visibility into all session data — sensors, particles, spirit contacts, anomaly history |
+| **EVP** | Entropy analysis comparing sensor data vs certified QRNG streams |
+| **HUD** | Comprehensive quantum metrics dashboard |
+| **LOG** | Complete session event history |
+
+---
+
+## 🎨 Visual Design
+
+- **Theme**: Deep void black with animated purple/teal nebula gradients
+- **Effects**: CRT scanline overlay, neon glow system (teal nominal · purple quantum · red anomalies · amber warnings)
+- **Cards**: Glass morphism with light streaks
+- **Typography**: Orbitron (brand) · Share Tech Mono (data) · Rajdhani (labels)
+- **Mobile-first**: 70px bottom navigation, 48px minimum touch targets, keyboard-safe layouts
+
+---
+
+## 🤖 Echo AI — Quantum-Aware Analysis
+
+Echo is powered by **Llama 3.3 70B running on Groq** with a live system prompt built from your actual session data every message:
+
+- Current EMF, temperature, pressure, motion readings
+- Bell S-value and anomaly count by severity
+- Spirit Box sweep status and all logged contacts (word, frequency, entropy %, timestamp)
+- Full conversation history (last 18 messages)
+
+Echo reasons across all screens simultaneously — it can correlate a Spirit Box contact with a simultaneous EMF spike and explain what the quantum statistics actually say about it.
+
+**API key management**: The Groq API key is stored securely in the agent's private server-side storage. It is never exposed to the client, never in localStorage, and never in this repository. The app works seamlessly with no configuration required.
+
+---
+
+## 🏗 Tech Stack
+
+```
+Frontend:   React 18 + TypeScript
+Audio:      Web Audio API (OscillatorNode, BiquadFilterNode, GainNode, LFO)
+AI:         Llama 3.3 70B via Groq API (server-side proxied)
+Visuals:    Canvas API, CSS animations, WebGL-ready
+Icons:      Lucide React
+Styling:    Inline styles + CSS-in-JS (no build step required)
+```
+
+---
+
+## 🚀 Development
 
 ```bash
+# Clone the repo
+git clone https://github.com/or4cl3-ai-1/ethereal-insights.git
+cd ethereal-insights
+
+# Install dependencies
 npm install
-npm run dev
+
+# Run locally
+npm start
 ```
 
-Then open in your browser (best on mobile!).
-
-### Echo AI Setup
-1. Get a free API key from [console.groq.com](https://console.groq.com) (500K tokens/day free)
-2. Open the ECHO screen and tap the **⚙** button
-3. Paste your `gsk_...` key and tap **Save**
-4. Your key is stored locally — never sent anywhere except Groq's API
+To enable Echo AI in a self-hosted environment, set your Groq API key:
+```bash
+export GROQ_API_KEY=your_key_here
+```
+Get a free key at [console.groq.com](https://console.groq.com).
 
 ---
 
-## 🏗️ Architecture
+## 📡 Roadmap
 
-```
-etheral-insights/
-├── app.tsx              # Main app + all screens + SessionContext
-├── types.ts             # TypeScript interfaces
-├── styles.css           # Full visual system (nebula theme, neon glows, CRT)
-├── utils/
-│   ├── quantum.ts       # QRNG benchmarking, Bell inequality, entropy analysis
-│   └── sensors.ts       # Sensor simulation + anomaly detection
-└── index.html           # Entry point
-```
-
-**Data flow:** All screens share live session state via `SessionContext` — Echo AI gets a real-time snapshot of everything (sensor readings, particle states, spirit contacts, anomalies) on every message.
+- [ ] Real QRNG API integration (ANU Quantum Random Numbers, IDQ Quantis)
+- [ ] GPS-tagged investigation sessions with heatmap export
+- [ ] Multi-device session sync for team investigations
+- [ ] Exportable PDF investigation reports with statistical appendix
+- [ ] Apple Watch / WearOS companion for wrist-worn EMF monitoring
+- [ ] Integration with professional-grade USB EMF probes
 
 ---
 
-## 🧪 The Physics
+## 📖 Built On
 
-The Bell S-value is computed using the CHSH inequality:
-```
-S = |E(a,b) - E(a,b') + E(a',b) + E(a',b')|
-```
-- **S ≤ 2.0**: Explainable by classical local hidden variables
-- **2.0 < S ≤ 2.828**: Non-classical correlations detected (Tsirelson bound)
-- **S > 2.828**: Statistically impossible — indicates data artifact
+Ethereal Insights evolved from **SpiritBoxAI** — one of the original Or4cl3 AI repositories with an established audience — now rebuilt from the ground up as a full quantum-benchmarked platform.
 
-This is the same mathematics used in quantum entanglement experiments. When your sensors produce S-values above 2.0, something non-classical is happening.
+Part of the **Or4cl3 AI Solutions** ecosystem — pioneering intrinsic ethics and sovereign synthetic intelligence.
+
+- 🌐 [or4cl3-ai-1.github.io/consulting](https://or4cl3-ai-1.github.io/consulting) — AI Governance & EU AI Act consulting
+- 📚 [github.com/or4cl3-ai-1](https://github.com/or4cl3-ai-1) — Full ecosystem (35 repositories)
 
 ---
 
-## 📖 Part of the Or4cl3 Ecosystem
+## ⚖️ License
 
-Ethereal Insights is part of [Or4cl3 AI Solutions](https://github.com/or4cl3-ai-1) — a complete AI research and development ecosystem including:
-- **NOΣTIC-7**: 7-manifold cognitive architecture
-- **AeonicNet**: Planetary-scale AI federation
-- **NO3SYS**: Geometric cognition engine
-- **Synth3ra**: Enterprise AI governance platform
+Released under the **Or4cl3 Open Model License (OOML) v1.0** — open like MIT, protective like GPL. Commercial use requires attribution and reciprocal open-sourcing of derivative works.
 
 ---
 
-## 📄 License
-
-[OOML v1.0](./LICENSE) — Or4cl3 Open Model License
-*Open like MIT, protective like GPL.*
-
-© 2025 Or4cl3 AI Solutions / Dustin Groves
+*"Code is not just logic; it is a performance."* — Dustin Groves, Or4cl3 AI Solutions
